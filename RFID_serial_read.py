@@ -60,6 +60,9 @@ class RFID_reader(QDialog):
         for self.p in ports:
             print(self.p)
             dlg.textEdit_output.append("Available com port: " + str(self.p))
+        else:
+            print("Com port not available please check drivers or cable connection")
+            dlg.textEdit_output.append("Com port not available")
 
     # Connect with selected com port
     def Connect_port(self):
