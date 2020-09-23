@@ -130,9 +130,9 @@ class SerialThread(Thread):
                 if read == 1:
                     self.data_r = ser.readline()
                     if len(self.data_r) >= 1:
-                        print("Raw Data: " + self.data_r.decode('Ascii'))
-                        # Filter and decode RFID data
                         try:
+                            print("Raw Data: " + self.data_r.decode('Ascii'))
+                            # Filter and decode RFID data
                             self.x = self.data_r.decode('Ascii')
                             self.y = self.x[4] + self.x[5] + self.x[6] + \
                                 self.x[7] + self.x[8] + self.x[9]
